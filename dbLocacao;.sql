@@ -14,7 +14,9 @@ CREATE TABLE Endereco (
     Bairro_Endereco INTEGER,
     CEP_Endereco VARCHAR(9) NOT NULL,
     Cidade_Endereco VARCHAR(30) DEFAULT "SP",
-    Estado_Endereco CHAR(2) DEFAULT "SP");
+    Estado_Endereco CHAR(2) DEFAULT "SP",
+    foreing key (TipoLocal_idTipoLocal) references Local (TipoLocal_idTipoLocal),
+    foreing key (Pessoa_idPessoa) references Pessoa (Pessoa_idPessoa));
 
 CREATE TABLE Cliente (
     idCliente INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -22,21 +24,25 @@ CREATE TABLE Cliente (
     Pai_Cliente VARCHAR(80) NOT NULL,
     Mae_Cliente VARCHAR(80) NOT NULL,
     Nick_Cliente VARCHAR(12) NOT NULL,
-    Senha_Cliente VARCHAR(8) NOT NULL);  
+    Senha_Cliente VARCHAR(8) NOT NULL,
+    foreing key (Pessoa_idPessoa) references Pessoa (Pessoa_idPessoa));  
 
 CREATE TABLE Pessoa (
     idPessoa INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     TipoPessoa_idTipoPessoa INTEGER NOT NULL,
     Nome_Pessoa VARCHAR(80) NOT NULL,
     RG_Pessoa VARCHAR(10) NOT NULL UNIQUE,
-    CPF_Pessoa VARCHAR(14) NOT NULL UNIQUE);
+    CPF_Pessoa VARCHAR(14) NOT NULL UNIQUE)
+    foreing key (TipoPessoa_idTipoPessoa) references TipoPessoa (TipoPessoa_idTipoPessoa));
 
 CREATE TABLE Contato (
     idContato INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     TipoLocal_idTipoLocal INTEGER NOT NULL,
     Pessoa_idPessoa INTEGER NOT NULL,
     Telefone_Contato VARCHAR(13) NOT NULL UNIQUE,
-    Email_Contato VARCHAR(30) NOT NULL UNIQUE);
+    Email_Contato VARCHAR(30) NOT NULL UNIQUE,
+    foreing key (TipoLocal_idTipoLocal) references TipoLocal (TipoPessoa_idTipoPessoa),
+    foreing key (Pessoa_idPessoa) references Pessoa (Pessoa_idPessoa));
 
 CREATE TABLE TipoPessoa (
     idTipoPessoa INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -61,11 +67,16 @@ CREATE TABLE Aluguel (
     Cliente_idCliente INTEGER NOT NULL,
     Jogos_idJogos INTEGER NOT NULL,
     Valor_Aluguel REAL NOT NULL,
-    Data_Aluguel DATE NOT NULL);
+    Data_Aluguel DATE NOT NULL,
+    foreing key (Jogos_idJogos) references Pessoa (Jogos_idJogos),
+    foreing key (Cliente_idCliente) references Cliente (Cliente_idCliente),
+    foreing key (VideoGame_idVideoGame) references VideoGame (VideoGame_idVideoGame),
+    foreing key (Funcionario_idFuncionario) references Funcionario (Funcionario_idFuncionario));
 
 CREATE TABLE Funcionario (
     idFuncionario INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
     Pessoa_idPessoa INTEGER,
     Sexo CHAR(1) CHECK (UPPER (SEXO) = ‘M’ OR LOWER (SEXO) = ‘F’,
-    Idade INTEGER); 
+    Idade INTEGER,
+    foreing key (Pessoa_idPessoa) references Pessoa (Pessoa_idPessoa)); 
 
