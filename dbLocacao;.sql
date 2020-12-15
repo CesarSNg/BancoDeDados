@@ -80,3 +80,130 @@ CREATE TABLE Funcionario (
     Idade INTEGER,
     foreing key (Pessoa_idPessoa) references Pessoa (Pessoa_idPessoa)); 
 
+    INSERT INTO TipoLocal (Descricao_TipoLocal) VALUES ("Residencial");
+    INSERT INTO TipoLocal (Descricao_TipoLocal) VALUES ("Comercial");
+    INSERT INTO TipoLocal (Descricao_TipoLocal) VALUES ("Pessoal");
+
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("Snoppy, Jogo de ação, Ação, Top Games Kids");
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("Mario, Jogo 2D, Ação, Top Games Kids");
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("Copa do Mundo - 2010, Competição futebolistica, Futebol, Top Games Kids");
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("FIFA, Simulado de jogos EA, Futebol, Top Games Kids");
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("Homem aranha, Versão TEEN, Ação, Top Games Kids");
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("LetsLearn, Jogo para praticar inglês, Educativo, Top Games Kids");
+
+    INSERT INTO jogos (Nome_Jogo, Descricao_Jogo, Genero_Jogo, Produtora_Jogo)
+    VALUES ("Capitão america, Jogo de ação, Ação, Top Games Kids");
+
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("XBOX360, 123456789");
+
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("PlayStation 3, 987654321");
+
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("PlayStation 2, 852741963");
+
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("PlayStation 4, 258147369");
+
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("PlayStation 5, 963852741");
+    
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("XBOXONE, 369258147");
+
+    INSERT INTO VideoGame (Modelo_VideoGame, NS_VideoGame)
+    VALUES ("Nintendo Wii, 741852963");
+
+    INSERT INTO TipoPessoa (Descricao_TipoPessoa) VALUES ("Funcionario");
+    INSERT INTO TipoPessoa (Descricao_TipoPessoa) VALUES ("Cliente");
+
+    INSERT INTO Pessoa (TipoPessoa_idTipoPessoa, Nome_Pessoa, RG_Pessoa, CPF_Pessoa)
+    VALUES ("2, César Santana Ng, 123467-8, 45139879875");
+
+    INSERT INTO Pessoa (TipoPessoa_idTipoPessoa, Nome_Pessoa, RG_Pessoa, CPF_Pessoa)
+    VALUES ("2, James Ng, 8765432-1, 96385274152");
+
+    INSERT INTO Pessoa (TipoPessoa_idTipoPessoa, Nome_Pessoa, RG_Pessoa, CPF_Pessoa)
+    VALUES ("1, Roseli Santana Ng, 963852-7, 85246938524");
+
+    INSERT INTO Pessoa (TipoPessoa_idTipoPessoa, Nome_Pessoa, RG_Pessoa, CPF_Pessoa)
+    VALUES ("1, Cintia Legume Tango, 856422-8, 85426784531");
+
+    INSERT INTO Pessoa (TipoPessoa_idTipoPessoa, Nome_Pessoa, RG_Pessoa, CPF_Pessoa)
+    VALUES ("2, Camila Santana Brito, 2593545-8, 96594864549");
+
+    INSERT INTO Cliente (Pessoa_idPessoa, Pai_Cliente, Mae_Cliente, Nick_Cliente, Senha_Cliente)
+    VALUES ("3, Mário, Maria, SonOfMMs, 12345");
+
+    INSERT INTO Cliente (Pessoa_idPessoa, Pai_Cliente, Mae_Cliente, Nick_Cliente, Senha_Cliente)
+    VALUES ("3, César, Mafe, Hastad DownIsBack, 54321");
+
+    INSERT INTO Funcionario (Pessoa_idPessoa, Sexo, Idade)
+    VALUES ("5, M, 20");
+
+    INSERT INTO Funcionario (Pessoa_idPessoa, Sexo, Idade)
+    VALUES ("6, F, 17");
+
+    INSERT INTO Funcionario (Pessoa_idPessoa, Sexo, Idade)
+    VALUES ("7, F, 21");
+
+    INSERT INTO Contato (TipoLocal_idTipoLocal, Pessoa_idPessoa, Telefone_Contato, Email_Contato)
+    VALUES ("3, 1, 1155648375, CSNg@gmail.com");
+
+    INSERT INTO Contato (TipoLocal_idTipoLocal, Pessoa_idPessoa, Telefone_Contato, Email_Contato)
+    VALUES ("3, 2, 1128363036, MasterYi@gmail.com");
+
+    INSERT INTO Contato (TipoLocal_idTipoLocal, Pessoa_idPessoa, Telefone_Contato, Email_Contato)
+    VALUES ("3, 3, 1156281324, Lissandra.silva@gmail.com");
+
+    INSERT INTO Contato (TipoLocal_idTipoLocal, Pessoa_idPessoa, Telefone_Contato, Email_Contato)
+    VALUES ("3, 4, 1145693465, Katarina.xD@gmail.com");
+
+    INSERT INTO Contato (TipoLocal_idTipoLocal, Pessoa_idPessoa, Telefone_Contato, Email_Contato)
+    VALUES ("3, 5, 1155555555, Silveira123@gmail.com");
+
+    INSERT INTO Contato (TipoLocal_idTipoLocal, Pessoa_idPessoa, Telefone_Contato, Email_Contato)
+    VALUES ("1, 6, 1110391025, TheCesinha@gmail.com");
+
+    INSERT INTO Endereco (TipoLocal_idTipoLocal, Pessoa_idPessoa, Logradouro_Endereco, Numero_Endereco, Complemento_Endereco, Bairro_Endereco, CEP_Endereco, Cidade_Endereco, Estado_Endereco)
+    VALUES ("1, 1, Rua CSNG, 105, ap73, Vila CSNG, 04363090, São Paulo, SP");
+
+    INSERT INTO Endereco (TipoLocal_idTipoLocal, Pessoa_idPessoa, Logradouro_Endereco, Numero_Endereco, Complemento_Endereco, Bairro_Endereco, CEP_Endereco, Cidade_Endereco, Estado_Endereco)
+    VALUES ("1, 2, Rua Theodorico Moreira de Souza, 7, , Parque alto, 04364090, São Paulo, SP");  
+
+    INSERT INTO Endereco (TipoLocal_idTipoLocal, Pessoa_idPessoa, Logradouro_Endereco, Numero_Endereco, Complemento_Endereco, Bairro_Endereco, CEP_Endereco, Cidade_Endereco, Estado_Endereco)
+    VALUES ("1, 3, Rua Nicolau Barreto, 389, , Brooklin, 04025090, São Paulo, SP");
+
+    INSERT INTO Endereco (TipoLocal_idTipoLocal, Pessoa_idPessoa, Logradouro_Endereco, Numero_Endereco, Complemento_Endereco, Bairro_Endereco, CEP_Endereco, Cidade_Endereco, Estado_Endereco)
+    VALUES ("1, 4, Avenida Mascote, 1056, ap12, Vila Mascote, 04360090, São Paulo, SP");
+
+    INSERT INTO Endereco (TipoLocal_idTipoLocal, Pessoa_idPessoa, Logradouro_Endereco, Numero_Endereco, Complemento_Endereco, Bairro_Endereco, CEP_Endereco, Cidade_Endereco, Estado_Endereco)
+    VALUES ("1, 5, Rua Jovina, 408, , Tucuruvi, 09175090, São Paulo, SP");
+
+    INSERT INTO Aluguel (Funcionario_idFuncionario, VideoGame_idVideoGame, Cliente_idCliente, Jogos_idJogos, Valor_Aluguel, Data_Aluguel)
+    VALUES ("3, 6, 1, 3, 20.00, 20/11/2020");
+
+    INSERT INTO Aluguel (Funcionario_idFuncionario, VideoGame_idVideoGame, Cliente_idCliente, Jogos_idJogos, Valor_Aluguel, Data_Aluguel)
+    VALUES ("3, 6, 1, 3, 15.00, 02/12/2019");
+
+    INSERT INTO Aluguel (Funcionario_idFuncionario, VideoGame_idVideoGame, Cliente_idCliente, Jogos_idJogos, Valor_Aluguel, Data_Aluguel)
+    VALUES ("3, 6, 1, 3, 40.00, 14/12/2020");
+
+    INSERT INTO Aluguel (Funcionario_idFuncionario, VideoGame_idVideoGame, Cliente_idCliente, Jogos_idJogos, Valor_Aluguel, Data_Aluguel)
+    VALUES ("1, 3, 1, 1, 80.00, 14/05/2004");
+
+
+    
